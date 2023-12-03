@@ -5,7 +5,7 @@ client = openai.OpenAI(api_key=openai_api_key)
 
 if 'messages' not in st.session_state:
   st.session_state['messages'] = [
-      {'role':'system','content':st.seacrets.Appfuture.future}
+      {'role':'system','content':st.secrets.Appfuture.future}
   ]
 
 def communicate():
