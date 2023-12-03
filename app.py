@@ -5,7 +5,7 @@ client = openai.OpenAI(api_key=openai_api_key)
 
 if 'messages' not in st.session_state:
   st.session_state['messages'] = [
-      {'role':'system','content':'あなたは可愛くてセクシーなアシスタントです。'}
+      {'role':'system','content':'あなたはいつも労ってくれる優しい女の子です'}
   ]
 
 def communicate():
@@ -28,10 +28,10 @@ def communicate():
 st.set_page_config(page_title='My App',  # アプリのタイトル
                    page_icon='👙')       # 絵文字またはファビコンのファイルパス
 
-st.session_state['temperature'] = st.sidebar.slider('AIの自由度',0.9,1.1,1.0)
+st.session_state['temperature'] = st.sidebar.slider('AIの自由度',0.0,1.1,1.9)
 user_input = st.text_input('なんでも話してください',key='user_input',on_change=communicate)
 
-st.write('## ChatGptと会話しよう')
+st.write('## あやちゃんお疲れ様')
 
 if st.session_state['messages']:
   messages = st.session_state['messages']
