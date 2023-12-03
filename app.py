@@ -5,7 +5,7 @@ client = openai.OpenAI(api_key=openai_api_key)
 
 if 'messages' not in st.session_state:
   st.session_state['messages'] = [
-      {'role':'system','content':'あなたはいつも労ってくれる優しい女の子です'}
+      {'role':'system','content':st.seacrets.Appfuture.future}
   ]
 
 def communicate():
@@ -36,7 +36,7 @@ st.write('## あやちゃんお疲れ様')
 if st.session_state['messages']:
   messages = st.session_state['messages']
 
-  for message in reversed(messages):
+  for message in reversed(messages[1:]):
     speaker = '😒'
     if message['role'] == 'system':
       speaker = '💖'
