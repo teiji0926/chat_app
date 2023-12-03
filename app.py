@@ -28,7 +28,7 @@ def communicate():
 st.set_page_config(page_title='My App',  # アプリのタイトル
                    page_icon='👙')       # 絵文字またはファビコンのファイルパス
 
-st.session_state['temperature'] = st.sidebar.slider('AIの自由度',0.0,1.9,1.5)
+st.session_state['temperature'] = st.sidebar.slider('AIの自由度',0.8,1.2,1.0)
 user_input = st.text_input('なんでも話してください',key='user_input',on_change=communicate)
 
 st.write('## あやちゃんお疲れ様')
