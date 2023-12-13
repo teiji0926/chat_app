@@ -27,9 +27,9 @@ def communicate():
 st.set_page_config(page_title='My App',  # アプリのタイトル
                    page_icon='😊')       # 絵文字またはファビコンのファイルパス
 
+st.image('https://th.bing.com/th/id/OIP.jTM783SqpskYfwDZqbWt5gHaH-?w=195&h=210&c=7&r=0&o=5&dpr=1.1&pid=1.7')
 user_input = st.text_input('キザなAIと会話してみよう',key='user_input',on_change=communicate)
 
-st.write('## サンプル')
 
 if st.session_state['messages']:
   messages = st.session_state['messages']
