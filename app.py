@@ -16,7 +16,6 @@ def communicate():
   response = client.chat.completions.create(
       model = 'gpt-3.5-turbo',
       messages = messages,
-      temperature = st.session_state['temperature']
   )
 
   bot_message = {'role':'system','content':response.choices[0].message.content}
@@ -26,19 +25,18 @@ def communicate():
 
 
 st.set_page_config(page_title='My App',  # アプリのタイトル
-                   page_icon='👙')       # 絵文字またはファビコンのファイルパス
+                   page_icon='😊')       # 絵文字またはファビコンのファイルパス
 
-st.session_state['temperature'] = st.sidebar.slider('AIの自由度',0.8,1.2,1.0)
-user_input = st.text_input('なんでも話してください',key='user_input',on_change=communicate)
+user_input = st.text_input('キザなAIと会話してみよう',key='user_input',on_change=communicate)
 
-st.write('## あやちゃんお疲れ様')
+st.write('## サンプル')
 
 if st.session_state['messages']:
   messages = st.session_state['messages']
 
   for message in reversed(messages[1:]):
-    speaker = '😒'
+    speaker = '💬'
     if message['role'] == 'system':
-      speaker = '💖'
+      speaker = '🤖'
     
     st.write(speaker + ":" + message["content"])
